@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", "Roboto", "Outfit", sans-serif;
+  --color-primary: theme("colors.indigo.600");
+  --color-primary-hover: theme("colors.indigo.700");
+  --color-success: theme("colors.emerald.400");
+  --color-success-hover: theme("colors.emerald.500");
+  
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+@layer base {
+  body {
+    @apply antialiased transition-colors duration-300;
+  }
+}
+
+@layer base {
+  html, body {
+    @apply bg-slate-50 dark:bg-slate-900 min-h-screen;
+  }
+  body {
+    @apply antialiased transition-colors duration-300;
+  }
+}
